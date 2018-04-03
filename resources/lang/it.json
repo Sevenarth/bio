@@ -9,5 +9,21 @@
     "Confirm Password": "Conferma password",
     "Send Password Reset Link": "Invia link di reset password",
     "Logout": "Disconnettiti",
-    "Page not found": "Pagina non trovata"
+    "Page not found": "Pagina non trovata",
+    "Go to:": "Vai a:",
+    "Profiles": "Profili",
+    "Categories": "Categorie",
+    "New post": "Nuovo post",
+    "Title": "Titolo",
+    "Description": "Descrizione",
+    "Pictures": "Immagini",
+    "optional": "opzionale",
+    "Picture link": "Link immagine",
+    "Upload picture": "Carica immagine",
+    "Remove picture": "Rimuovi immagine",
+    "The images are displayed in the same order as here, from the first till the last.": "L'ordine della mostra delle immagini corrisponde all'ordine qui visto. Dal primo all'ultimo elemento.",
+    "Available quantity": "Quantità disponibile",
+    "Create": "Crea",
+    "Amazon countries": "Paesi Amazon",
+    "(no category)": "(nessuna categoria)"
 }

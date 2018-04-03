@@ -18,8 +18,8 @@ class CreateFormsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('pictures');
-            $table->timestamp('expires_on');
-            $table->timestamp('starts_on')->nullable();
+            $table->integer('counter')->default(0);
+            $table->text('countries');
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null')->nullable();
             $table->timestamps();

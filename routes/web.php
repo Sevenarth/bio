@@ -16,5 +16,21 @@ Route::get('/', function () {
 });
 
 Route::prefix('pannello')->group(function () {
-    Auth::routes();   
+    Auth::routes();
+});
+
+Route::namespace('Panel')->name('panel.')->middleware('auth')->prefix('pannello')->group(function () {
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/upload', 'HomeController@uploadForm')->name('upload');
+    
+    Route::prefix('profiles')->name('testers.')->group(function () {
+        Route::get('/', 'TestersController@index')->name('index');
+    });
+    Route::prefix('posts')->name('forms.')->group(function () {
+        Route::get('/', 'FormsController@index')->name('index');
+        Route::get('/new', 'FormsController@new')->name('new');
+    });
+    Route::prefix('categories')->name('categories.')->group(function () {
+        Route::get('/', 'CategoriesController@index')->name('index');
+    });
 });

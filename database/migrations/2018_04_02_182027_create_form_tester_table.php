@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTestersFormsTable extends Migration
+class CreateFormTesterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTestersFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('testers_forms', function (Blueprint $table) {
+        Schema::create('form_tester', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('form_id')->unsigned()->nullable();
             $table->foreign('form_id')->references('id')->on('forms')->nullable()->onDelete('set null');

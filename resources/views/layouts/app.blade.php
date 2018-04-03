@@ -17,29 +17,36 @@
 <body>
     <div id="app">
       <div class="loading"></div>
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="my-2 navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/images/logo.svg" class="image-responsive" height="50" alt="{{ config('app.name', 'Laravel') }}">
+                    <img src="/images/logo.svg" class="image-responsive logo" alt="{{ config('app.name', 'Laravel') }}">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul id="header-nav" class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <!--<li><a class="nav-link" href="{{ route('register') }}">Register</a></li>-->
+                            <li class="nav-item mx-3"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item ml-3">
+                                <a href="{{ route('panel.index') }}" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item ml-3">
+                                <a href="{{ route('panel.testers.index') }}" class="nav-link">{{ __('Profiles') }}</a>
+                            </li>
+                            <li class="nav-item ml-3">
+                                <a href="{{ route('panel.forms.index') }}" class="nav-link">{{ __('Posts') }}</a>
+                            </li>
+                            <li class="nav-item ml-3">
+                                <a href="{{ route('panel.categories.index') }}" class="nav-link">{{ __('Categories') }}</a>
+                            </li>
+                            <li class="nav-item ml-3 dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -61,9 +68,13 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="pt-3">
             @yield('content')
         </main>
+        <footer class="container text-muted mb-3">
+            <hr>
+            <small>Copyright &copy; {{ date('Y') }} Recensire.eu. All rights are reserved.</small>
+        </footer>
     </div>
 
     <!-- Scripts -->

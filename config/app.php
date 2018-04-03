@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Rome',
 
     /*
     |--------------------------------------------------------------------------
@@ -160,7 +160,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\OrderableServiceProvider::class,
+        App\Providers\InvalidFeedbackServiceProvider::class
     ],
 
     /*
@@ -211,5 +212,64 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
     ],
+
+    "amz_countries" => [
+        [
+            "domain" => "au",
+            "flag" => "🇦🇺"
+        ],
+        [
+            "domain" => "ca",
+            "flag" => "🇨🇦"
+        ],
+        [
+            "domain" => "cn",
+            "flag" => "🇨🇳"
+        ],
+        [
+            "domain" => "co.jp",
+            "flag" => "🇯🇵"
+        ],
+        [
+            "domain" => "co.uk",
+            "flag" => "🇬🇧"
+        ],
+        [
+            "domain" => "com",
+            "flag" => "🇺🇸"
+        ],
+        [
+            "domain" => "com.br",
+            "flag" => "🇧🇷"
+        ],
+        [
+            "domain" => "de",
+            "flag" => "🇩🇪"
+        ],
+        [
+            "domain" => "es",
+            "flag" => "🇪🇸"
+        ],
+        [
+            "domain" => "fr",
+            "flag" => "🇫🇷"
+        ],
+        [
+            "domain" => "in",
+            "flag" => "🇮🇳"
+        ],
+        [
+            "domain" => "it",
+            "flag" => "🇮🇹"
+        ],
+        [
+            "domain" => "mx",
+            "flag" => "🇲🇽"
+        ],
+        [
+            "domain" => "nl",
+            "flag" => "🇳🇱"
+        ]
+    ]
 
 ];
