@@ -16,18 +16,7 @@ class HomeController extends Controller
             'posts' => Form::count(),
             'profiles' => FormTester::count(),
             'testers' => Tester::count(),
-            'expired_posts' => Form::where(function ($q) {
-                $q->where('expires_on', '<', \Carbon\Carbon::now(config('app.timezone')));
-            })->count(),
-            'inactive_posts' => Form::where(function ($q) {
-                $q->whereNotNull('starts_on')
-                  ->where('starts_on', '>', \Carbon\Carbon::now(config('app.timezone')))
-                  ->where('expires_on', '>', \Carbon\Carbon::now(config('app.timezone')));
-            })->count(),
-            'active_posts' => Form::where(function ($q) {
-                $q->whereNull('starts_on')
-                  ->orWhere('starts_on', '<', \Carbon\Carbon::now(config('app.timezone')));
-            })->where('expires_on', '>', \Carbon\Carbon::now(config('app.timezone')))->count()
+            'active_posts' => Form::where('counter', '>', 0)->count()
         ];
         return view('panel/index', compact('last_profiles', 'stats'));
     }

@@ -34,6 +34,7 @@
                     <option value="{{ $countries['domain'] }}">{{ $countries['flag'] }} Amazon.{{ $countries['domain'] }}</option>
                     @endforeach
                 </select>
+                <small class="text-muted">{!! __('Choose more countries by holding <code class="border rounded p-1">Ctrl</code> on PC or <code class="h6 border rounded">&#8984;</code> on macOS.') !!}</small>
             </fieldset>
 
             <fieldset class="form-group">

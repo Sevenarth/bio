@@ -25,5 +25,6 @@
     "Available quantity": "Quantità disponibile",
     "Create": "Crea",
     "Amazon countries": "Paesi Amazon",
-    "(no category)": "(nessuna categoria)"
+    "(no category)": "(nessuna categoria)",
+    "Choose more countries by holding <code class=\"border rounded p-1\">Ctrl</code> on PC or <code class=\"h6 border rounded\">&#8984;</code> on macOS.": "Seleziona pi&ugrave; paesi tenendo premuto <code class=\"border rounded p-1\">Ctrl</code> su PC o <code class=\"h6 border rounded\">&#8984;</code> su macOS."
 }

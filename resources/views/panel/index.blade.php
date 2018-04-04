@@ -26,8 +26,6 @@
                         {{ __('There are :X posts. Of which:', ['X' => $stats['posts']]) }}
                         <ul class="my-2">
                             <li>{{ __(':X are currently active', ['X' => $stats['active_posts']]) }}</li>
-                            <li>{{ __(':X will start soon', ['X' => $stats['inactive_posts']]) }}</li>
-                            <li>{{ __(':X are expired', ['X' => $stats['expired_posts']]) }}</li>
                         </ul>
                     </div>
                 </div>
