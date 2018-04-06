@@ -24,9 +24,11 @@
         "@fortawesome/fontawesome-free-brands": "^5.0.9",
         "@fortawesome/fontawesome-free-solid": "^5.0.9",
         "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
+        "markdown-it": "^8.4.1",
         "moment": "^2.22.0",
         "moment-timezone": "^0.5.14",
         "pjax": "^0.2.5",
-        "simplemde": "^1.11.2"
+        "simplemde": "^1.11.2",
+        "slick-carousel": "^1.8.1"
     }
 }

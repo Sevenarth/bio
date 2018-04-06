@@ -2,7 +2,9 @@ const localeStrings = {
     "it": {
         "Picture link": "Link immagine",
         "Upload picture": "Carica immagine",
-        "Remove picture": "Rimuovi immagine"
+        "Remove picture": "Rimuovi immagine",
+        "The chosen picture is not valid.": "L'immagine selezionata non è valida",
+        "No picture has been chosen": "Nessuna immagine è stata selezionata."
     }
 };
 

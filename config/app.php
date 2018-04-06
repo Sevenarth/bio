@@ -161,7 +161,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\OrderableServiceProvider::class,
-        App\Providers\InvalidFeedbackServiceProvider::class
+        App\Providers\InvalidFeedbackServiceProvider::class,
+        App\Providers\FormBuilderServiceProvider::class
     ],
 
     /*
@@ -270,6 +271,36 @@ return [
             "domain" => "nl",
             "flag" => "🇳🇱"
         ]
-    ]
+    ],
+
+    'amz_indexes' => [
+        "au" => 0,
+        "ca" => 1,
+        "cn" => 2,
+        "co.jp" => 3,
+        "co.uk" => 4,
+        "com" => 5,
+        "com.br" => 6,
+        "de" => 7,
+        "es" => 8,
+        "fr" => 9,
+        "in" => 10,
+        "it" => 11,
+        "mx" => 12,
+        "nl" => 13
+    ],
+
+    'recaptcha_secret_key' => env('RECAPTCHA_SECRET_KEY'),
+    'recaptcha_public_key' => env('RECAPTCHA_PUBLIC_KEY'),
+    
+  'timeSpaces' => [
+    'secondi',
+    'minuti',
+    'ore',
+    'giorni',
+    'settimane',
+    'mesi',
+    'anni'
+  ],
 
 ];

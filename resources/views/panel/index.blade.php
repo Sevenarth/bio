@@ -37,7 +37,7 @@
                     </div>
                     <div class="list-group list-group-flush">
                         @forelse($last_profiles as $profile)
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <a href="{{ route('panel.testers.view', $profile->id) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{{ $profile->first_name }} {{ $profile->last_name }}</h5>
                                 <small class="relative-time">{{ $profile->created_at->toIso8601String() }}</small>

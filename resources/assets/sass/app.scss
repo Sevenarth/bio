@@ -11,7 +11,11 @@
 // Font Awesome
 @import '~@fortawesome/fontawesome-free-webfonts/scss/fa-brands';
 @import '~@fortawesome/fontawesome-free-webfonts/scss/fa-solid';
+@import '~@fortawesome/fontawesome-free-webfonts/scss/fa-regular';
 @import '~@fortawesome/fontawesome-free-webfonts/scss/fontawesome';
+
+
+@import '~slick-carousel/slick/slick-theme';
 
 nav {
   font-size: 1.2rem;
@@ -65,4 +69,51 @@ nav {
 .active-image {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+
+div.is-invalid {
+  border-radius: 5px;
+  border: 1px solid #dc3545;
+
+  & ~ .invalid-feedback {
+    display: block;
+  }
+}
+
+.bigger {
+  font-size: 1.25rem;
+}
+.bit-bigger {
+  font-size: 1.1rem;
+}
+.slideshow {
+  overflow: hidden
+}
+
+.slick-list {
+  max-height: 250px
+}
+
+.slick-slide {
+  text-align: center;
+  display: inline-block;
+}
+
+.img-slideshow {
+  max-height: 250px;
+  max-width: 100%
+}
+
+.slick-dots {
+  position: static
+}
+.slick-dots li button:before {
+  font-size: 15px
+}
+
+.markdown {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

@@ -10,6 +10,10 @@ class FormTester extends Pivot
         'amazon_profiles' => 'array'
     ];
 
+    protected $dates = [
+        'created_at'
+    ];
+
     public function form() {
         return $this->belongsTo('App\Form');
     }

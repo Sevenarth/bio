@@ -22,6 +22,7 @@ class CreateFormTesterTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->text('amazon_profiles');
+            $table->boolean('verified')->default(false);
             $table->timestamps();
         });
     }

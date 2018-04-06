@@ -41,7 +41,7 @@ return [
 
         'main' => [
             'salt' => 'R4nD0mS4l7F0r810',
-            'length' => '5',
+            'length' => '7',
         ],
 
     ],

@@ -19,6 +19,10 @@ class CreateFormsTable extends Migration
             $table->text('description');
             $table->text('pictures');
             $table->integer('counter')->default(0);
+            $table->integer('counts_on_time');
+            $table->integer('counts_on_space');
+            $table->timestamp('starts_on')->nullable();
+            $table->timestamp('last_count')->nullable();
             $table->text('countries');
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null')->nullable();

@@ -8,4 +8,8 @@ class Category {
     public function all() {
         return CategoryModel::all();
     }
+
+    public function tree() {
+        return CategoryModel::tree();
+    }
 }

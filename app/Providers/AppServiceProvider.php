@@ -15,6 +15,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        \Response::macro('attachment', function ($content, $filename="output.csv", $content_type="text/csv") {
+            $headers = [
+                'Content-type'        => $content_type,
+                'Content-Disposition' => 'attachment; filename="'.addcslashes($filename, '"').'"',
+            ];
+            return \Response::make($content, 200, $headers);
+        });
     }
 
     /**

@@ -7,27 +7,29 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
 var moment = require('moment');
 var Pjax = require('pjax');
-require('./specialmde');
-import __ from './translations';
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
+window.MD = require('markdown-it')({
+    html: true,
+    linkify: true,
+    breaks: true
 });
+require('./specialmde');
+window.Slick = require('slick-carousel');
+import __ from './translations';
 
 $(function () {
     window.locale = $("html").attr("lang");
     moment.locale(window.locale);
+
+    $('.slideshow').slick({
+        dots: true,
+        arrows: false
+    });
+
+    $(".markdown").each(function() {
+        $(this).html(MD.render($(this).text()));
+    });
 
     $(".relative-time").each(function() {
         var date = $(this).text();
@@ -151,4 +153,55 @@ $(function () {
     $("body").on('focusout', '.image-field-input', updateImageField);
     window.updateImageField = updateImageField;
 
+    $("#filter").submit(function() {
+        let data = $(this).serializeArray();
+        let context = {};
+
+        for(let i in data)
+            if(data[i]['value'])
+                context[data[i]['name']] = data[i]['value'];
+
+        let query = $.param(context);
+
+        window.location.href = window.location.pathname + (query.length > 0 ? "?" + query : "");
+        return false;
+    });
+
+    $("#choose-category").change(() => $("#filter").submit());
+    $("#choose-country").change(() => $("#filter").submit());
+
+
+  $("body").on('click', '.remove-confirmation', function() {
+    if($(this).attr("data-popover-toggled") == "true") {
+      $("#" + $(this).attr("aria-describedby")).remove()
+      return true;
+    }
+    $(this).attr("data-popover-toggled", "true");
+    $(this).popover('toggle');
+    return false;
+  });
+
+  $("body").on('hidden.bs.popover', '.remove-confirmation', function() {
+    $(this).attr("data-popover-toggled", "false");
+  });
+
+  $("body").on("click", ".select-country", function() {
+    var target = $(this).attr("data-target");
+    $(`#${target}-country`).val($(this).attr("data-country"));
+    $(`#${target}-btn`).text($(this).text());
+  });
+
+  window.sample_profile = $("#sample_profile").html();
+
+  $("#add-profile").click(function() {
+    var i = parseInt($("#profiles").attr("data-count"))+1;
+    var profile = `<div id="profile-${i}-wrapper" class="input-group mb-3"><div class="input-group" id="profile-${i}">` + sample_profile.replace(/profile-sample/g, 'profile-'+i) + `<div class="input-group-append"><button class="btn btn-danger remove-profile" data-target="profile-${i}" type="button"><i class="fa fa-fw fa-trash"></i></button></div></div></div>`;
+    $("#profiles").append(profile);
+    $("#profiles").attr("data-count", i);
+  });
+
+  $("body").on('click', '.remove-profile', function() {
+    var index = $(this).attr("data-target");  
+    $('#'+index+'-wrapper').remove();
+  })
 });
