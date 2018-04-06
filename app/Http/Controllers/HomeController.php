@@ -86,7 +86,7 @@ class HomeController extends Controller
 
         return redirect()
             ->route('thankyou')
-            ->with('status', __('Thank you for your application to this post! Check your email inbox now to verify your application!'));
+            ->with('status', __('Thank you for your application to this post! We have just sent you an email to verify your application!'));
     }
 
     public function thankyou() {
