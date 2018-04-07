@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('https://www.recensire.eu/');
+Route::get('/', function (Request $request) {
+    $ctrl = new \App\Http\Controllers\HomeController();
+    return $ctrl->view('QDgbWX3');
 });
 
 Route::get('/p/{hash}/', 'HomeController@view')->name('viewPost');
