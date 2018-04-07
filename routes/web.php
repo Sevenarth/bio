@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/');
+    return redirect('https://www.recensire.eu/');
 });
 
 Route::get('/p/{hash}/', 'HomeController@view')->name('viewPost');
