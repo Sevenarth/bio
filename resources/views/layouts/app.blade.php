@@ -24,6 +24,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="/images/logo.svg" class="image-responsive logo" alt="{{ config('app.name', 'Laravel') }}">
                 </a>
+                @section('navbar')
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,6 +68,7 @@
                         @endguest
                     </ul>
                 </div>
+                @show
             </div>
         </nav>
         @show

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('header') @endsection
-@section('footer') @endsection
+@section('navbar')
+<a href="/contactus" class="btn btn-info">Contact us</a>
+@endsection
 
 @section('meta')
 <meta property="og:title" content="{{ $form->title }}" />
@@ -30,14 +31,13 @@
     @endif
     <div class="row">
         <div class="col-sm-7">
-
-            <div class="slideshow">
+            <div class="my-3 slideshow">
                 @foreach($form->pictures as $image)
                 <div><img class="img-slideshow" src="{{ !empty($image) ? $image : '/images/package.svg' }}"></div>
                 @endforeach
             </div>
             <div class="clearfix"></div>
-            <div class="markdown bigger">{!! $form->description !!}</div>
+            <div class="markdown mt-4 bigger">{!! $form->description !!}</div>
         </div>
         <div class="col-sm-5">
             <h4>{{ __('Available for the following Amazon countries:') }}</h4>
