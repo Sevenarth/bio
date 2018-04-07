@@ -303,4 +303,6 @@ return [
     'anni'
   ],
 
+  'homepage_message' => env('HOMEPAGE_MESSAGE', '')
+
 ];

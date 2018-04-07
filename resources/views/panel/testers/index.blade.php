@@ -55,7 +55,7 @@
         </tr>
         @empty
         <tr>
-            <td colspan="5" class="text-muted text-center font-italic">{{ __('There are no profiles in the system.') }}</td>
+            <td colspan="6" class="text-muted text-center font-italic">{{ __('There are no profiles in the system.') }}</td>
         </tr>
         @endforelse
     </table>

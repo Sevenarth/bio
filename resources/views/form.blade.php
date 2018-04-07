@@ -20,7 +20,11 @@
         {{ session('status') }}
     </div>
     @endif
-    @if($form->counter > 0)
+    @if($form->id === 1)
+    <div class="alert alert-success">
+        <h3 class="m-0">{{ config('app.homepage_message') }}</h3>
+    </div>
+    @elseif($form->counter > 0)
     <div class="alert alert-success">
         <h3 class="m-0">{{ trans_choice(__('There is only one position left for this post! Hurry up!|There are still :num positions available for this post!'), $form->counter, ['num' => $form->counter]) }}</h3>
     </div>
